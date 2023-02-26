@@ -1,0 +1,128 @@
+
+			<%-- 
+					<tr>	
+					<td>
+						<input type="checkbox" name="agreeAll"
+						onClick="document.getElementById('agree_TermsofUse').click(); document.getElementById('agree_Privacy').click();"/>모두 동의합니다.
+					</td>
+					
+					</tr>		
+					
+						
+					
+					<tr>
+						<td>
+							<input type="checkbox" name="agree_TermsofUse" id="agree_TermsofUse"/>[필수] 웹사이트 이용약관 동의
+							<a href="agree_TemsofUse.do" onclick ="viewTerms(event)">보기</a>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="checkbox" name="agree_Privacy" id="agree_Privacy"/> [필수] 개인정보 수집 ∙ 이용 동의
+							<a href="agree_Privacy_popup.do" onclick ="viewTerms(event)">보기</a>
+						</td>
+					</tr>
+				
+			
+				
+				<div class="agree">
+						<input type="checkbox" id="agreeAll">
+						<label for="agreeAll">모두 동의합니다.</label>
+						
+								
+				
+				<tr>	 
+			      <td>
+			        <input type="checkbox" id="agree_TermsofUse" class="normal">
+			        <label for="agree_TermsofUse">[필수] 웹사이트 이용약관 동의</label>
+			        <a href="agree_TermsOfUse.do" onclick="viewTerms(event)">보기</a>
+			      </td>
+			    </tr>
+			    <tr>
+			      <td>
+			        <input type="checkbox" id="agree_Privacy" class="normal">
+			        <label for="agree_Privacy">[필수] 개인정보 수집 ∙ 이용 동의</label>
+			        <a href="agree_Privacy_popup.do" onclick="viewTerms(event)">보기</a>
+			      </td>
+			    </tr>
+				</div>
+				
+					--%>
+					
+					
+					
+			<div class="checkbox_group">
+			  <input type="checkbox" id="check_all">
+			  <label for="check_all">모두 동의합니다.</label>
+			  <hr>
+			  <input type="checkbox" id="agree_TermsofUse" class="nomal">
+			  <label for="agree_TermsofUse">[필수] 웹사이트 이용약관 동의</label>
+			  <a href="agree_TemsofUse.do" onclick="viewTerms(event)">보기</a>
+			  <br>
+			  <input type="checkbox" id="agree_Privacy" class="nomal">
+			  <label for="agree_Privacy">[필수] 개인정보 수집 ∙ 이용 동의</label>
+			  <a href="agree_Privacy_popup.do" onclick="viewTerms(event)">보기</a>
+			</div>
+			
+			
+			function pwCheck(){
+	
+	if(document.delForm.member_pw.value==''){
+		alert("암호는 필수 입력입니다.");
+		document.delForm.member_pw.focus();
+		return false;
+	}
+	return true;
+}
+
+
+
+				$(".checkbox_group").on("click","#check_all", function() {
+				var is_clicked = true;
+				if(!is_clicked){
+					alert("아이디 중복 체크를 해주세요.");
+					$('#member_id').focus();
+					return false;
+						}
+					}
+				});
+				
+				
+				if($('#member_pw').val() != $('#member_pw2').val()){
+		 	alert("비밀번호와 비밀번호확인이 다릅니다.");
+		 	$('#member_pw').val('');
+		 	$('#member_pw2').val('');
+		 	document.delForm.member_pw.focus();
+		 	return false;
+			}  	
+				
+				function id_check(){
+	if(!isBtnClicked) {
+		
+		alert("아이디 중복 체크를 해주세요.");
+		
+		return false;
+			}
+		return true;
+	
+	}
+  	    //******************************
+  	    //******************************
+		
+		//위 두 함수를 동시에 return으로 보내기 위한 함수
+		
+		function dbCheck(){
+		
+			if(agree_check() && id_check()) {
+			return true;
+
+		}else{
+		
+		return false;
+		
+		}
+		
+		}
+
+  	    //******************************
+  	    //******************************
