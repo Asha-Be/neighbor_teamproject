@@ -1,2 +1,14 @@
-package com.good.neighbor;public class TestController {
+package com.good.neighbor;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@RequestMapping("/test")
+@Controller
+public class TestController {
+
+  @RequestMapping("/fun")
+  public String test() {
+    return "test";
+  }
 }
