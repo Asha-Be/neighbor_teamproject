@@ -9,6 +9,8 @@ public class TestController {
 
   @RequestMapping("/fun")
   public String test() {
+    
+    String test1 = "null";
     return "test";
   }
 }
