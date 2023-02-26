@@ -290,7 +290,7 @@ public class MemberController {
 		//sql구문을 사용해서 정보를 form result로 넘겨서 화면에보여주면 되는거아닐까?????????????
 		//------------------------
 		
-		
+		//test
 	
 }//memberController-end
 
